@@ -1,0 +1,60 @@
+<% include partials/header2 %>
+<head><link rel="icon" type="image/ico" href="images/logo.jpg" /><title>Descriptive Paper</title></title></head>
+
+<body>
+ <div class="d1">
+<ul><li><p style="color:#fff;display:inline-block;"><img src="/images/logo.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><a href="#home" style="left:20px;padding:40px 20px 40px ">Home</a></li>
+  <li><a href="#news" style="padding:40px 20px 40px ">About Us</a></li>
+  <li><a href="/getstudentresults" style="padding:40px 20px 40px ">Results</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Faq</a></li>
+  <li><a href="/blog" style="padding:40px 20px 40px ">Blog</a></li>
+  <li><a href="/logout" style="padding:40px 20px 40px ">Logout</a></li>
+  <li style="float:right;background-color:yellow;height:100%;width:10%"><a href="#"><span>Paper<%= testid %></a></li>
+  <li style="float:right;background-color:yellow;height:100%;width:10%"><a href="#"><%= uname %></a></li>
+</ul>
+</div>	<br><br>	<br><br>
+<div class="rcorners1">
+<form action="/teachersetpaper/<%= testid %>/descqp" method="post">
+Question  <input type="text" name="descquestion" ><br>
+Answer  
+<textarea rows = "4" cols = "38" name = "modalanswer" id="fname" onkeyup="myFunction()"></textarea><br>
+<label>Weigthage <input type="number" min="1" id="weight"   name="descweightage" ></label><br>
+keywords <input type="text" name="desckeywords" placeholder="Enter comma seperated valus">
+         <input type = "submit" value = "submit" />
+	</form></div>
+	<hr>
+ <h2>Descriptive set by you</h2>
+  
+ 
+<table class="w3-table-all">
+    <thead>
+      <tr class="w3-red"> <th>Question</th> <th>answer</th> <th>weightage</th>
+      </tr>
+    </thead>
+    <% allqps.forEach(function(allqps){ %>
+    <tr><td>
+    <%= allqps.descquestion %></td><td><%= allqps.modalanswer %></td>
+          <td><%= allqps.descweightage %></td>
+           </tr>
+    <% }); %>
+  </table>	
+	
+	
+</body>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("fname");
+  x = x.value.length;
+  var y = document.getElementById("weight");
+  y.value = x/100;
+var z= document.getElementById("weight").max;z =y.value+2.0 ;
+  
+} 
+</script>
+

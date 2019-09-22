@@ -1,0 +1,53 @@
+<% include partials/header2 %>
+<head><link rel="icon" type="image/ico" href="images/logo.jpg" /><title>Set Paper</title></head>
+
+<body>
+    <div class="d1">
+<ul> <li><p style="color:#fff;display:inline-block;"><img src="/images/logo.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+    <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><a href="#home" style="left:20px;padding:40px 20px 40px ">Home</a></li>
+  <li><a href="#news" style="padding:40px 20px 40px ">About Us</a></li>
+  <li><a href="/getstudentresults" style="padding:40px 20px 40px ">Results</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Faq</a></li>
+  <li><a href="/blog" style="padding:40px 20px 40px ">Blog</a></li>
+  <li><a href="/logout" style="padding:40px 20px 40px ">Logout</a></li>
+
+    <li style="float:right;background-color:yellow;height:100%;width:10%"><a href="#"><span>Paper<%= testid %></a></li>
+    <li style="float:right;background-color:yellow;height:100%;width:10%"><a href="#"><%= uname %></a></li>
+</ul>
+	
+</div>
+
+</h1>
+
+<br>
+  
+  
+  <br><br><br><br><br><br><br>
+
+
+
+<a href="/teachersetpaper/<%= testid %>/tnfqp" target="_blank">Click on to set True and false type</a><br><br>
+<a href="/teachersetpaper/<%= testid %>/mcqqp" target="_blank">Click on to set MCQ type</a><br><br>
+<a href="/teachersetpaper/<%= testid %>/descqp" target="_blank">Click on to set Discriptve type</a><br><br>
+
+
+  <!--<button onclick="openWin()">Open "myWindow"</button>-->
+
+<script>
+function openWin() {
+  var myWindow = window.open("", "myWindow", "width=200, height=100");
+  myWindow.document.write("<div class="w3-container">
+ 
+  setTimeout(function(){ myWindow.close() }, 3000);
+}
+
+</script>
+
+
+ 
+  
+</body>

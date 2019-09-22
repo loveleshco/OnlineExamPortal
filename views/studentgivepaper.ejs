@@ -1,0 +1,83 @@
+<% include partials/header2 %></head>
+<title>Exam - <%= testid %></title>
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style> 
+
+<% var du= paperdur[0].paperduration;du=du*60 %>
+</style>
+
+</head>
+<script>
+
+
+function opentnf() {
+  window.open("/studentgivepaper/<%= testid %>/tnfqp", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=1200,height=1300,top=500,left=200,fullscreen=yes");
+} 
+
+		function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = minutes + ":" + seconds;
+        if (--timer < 0) {
+                      document.getElementById("time").innerHTML = "";   
+            }
+    }, 1000);window.setTimeout('window.location="/thankyou";',<%= du*1000 %>);
+}
+ 
+window.onload = function () {
+    var fiveMinutes = <%= du %>,
+    display = document.querySelector('#time');
+    startTimer(fiveMinutes, display); 
+        }; window.setTimeout('window.location="/thankyou";',<%= du*1000 %>);
+
+  </script>
+
+
+<body><script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+        
+                   window.onbeforeunload = function() {
+        return "Dude, are you sure you want to leave? Think of the kittens!";
+    }
+    </script>
+    
+<div class="d1">
+<ul> 
+  <li><p style="color:#fff;display:inline-block;"><img src="/images/logo.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><a href="#home" style="left:20px;padding:40px 20px 40px ">Home</a></li>
+  <li><a href="#news" style="padding:40px 20px 40px ">About Us</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Test</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Faq</a></li>
+  <li><a href="/blog" style="padding:40px 20px 40px ">Blog</a></li>
+  <li><a href="/logout" style="padding:40px 20px 40px ">Logout</a></li>
+  <li style="float:right;background-color:yellow;height:100%;width:20%"><a href="#"><span class="glyphicon glyphicon-time"></span> <span id="time"> <%= du/60 %>:00</span>	 </a></li>
+</ul>
+	
+</div>
+<br><br><br><br><br><br>
+
+
+
+
+<br><br><br>
+ <div class="rcorners1">
+<iframe height="600px" width="100%" src="/studentgivepaper/<%= testid %>/tnfqp" name="iframe_a"></iframe>	</div>
+<br><br><div class="rcorners1">
+<iframe height="800px" width="100%" src="/studentgivepaper/<%= testid %>/mcqqp" name="iframe_b"></iframe></div>
+<br><br><div class="rcorners1">
+<iframe height="800px" width="100%" src="/studentgivepaper/<%= testid %>/descqp" name="iframe_c"></iframe></div>

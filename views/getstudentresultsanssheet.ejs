@@ -1,0 +1,27 @@
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<h1>Welcome <%= uname %></h1>
+<h3>Your paper id is <%= testid %></h3>
+
+<div class="w3-container">
+  <h2>Click on MCQ or TF to get student results</h2>
+  
+<br>
+  <table class="w3-table-all">
+     <thead>
+      <tr class="w3-red">  
+            <th>Students test</th> <th>True n false</th>   <th>MCQ</th>  </tr>
+     </thead>
+<% students.forEach(function(students){ %>
+   <tr><td> <%= students.studentid %></td>
+         <td><a href="/getstudentresultsanssheet/<%= testid %>/<%= students.studentid%>/tnf" target='_blank'>TNF</td> 
+         <td><a href="/getstudentresultsanssheet/<%= testid %>/<%= students.studentid%>/mcq" target='_blank'>MCQ</td>
+             </tr>
+    <% }); %>
+  </table>
+
+  
+</div>

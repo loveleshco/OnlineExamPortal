@@ -1,0 +1,65 @@
+<% include partials/header2 %>
+<head><link rel="icon" type="image/ico" href="images/logo.jpg" /><title>Set TnF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<div class="d1">
+<ul> <li><p style="color:#fff;display:inline-block;"><img src="/images/logo.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+    <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><a href="#home" style="left:20px;padding:40px 20px 40px ">Home</a></li>
+  <li><a href="#news" style="padding:40px 20px 40px ">About Us</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Test</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Faq</a></li>
+  <li><a href="/blog" style="padding:40px 20px 40px ">Blog</a></li>
+  <li><a href="/logout" style="padding:40px 20px 40px ">Logout</a></li>
+
+  <li style="float:right;background-color:yellow;height:100%;width:20%"><a href="#">welcome <%= uname %></a></li>
+<p>Your paper id is <%= testid %></p>
+</ul>
+	
+</div>
+<br><br><br><br><br><br>
+
+
+<form action="/teachersetpaper/<%= testid %>/tnfqp" method="post"><br>
+
+<!--<label>Question no -->
+<!--<input type="text" name="tnfquestionno" ></label><br>-->
+<label>Question  
+<input type="text" name="tnfquestion"></label><br>
+<label id="g1">Correct answer    <fieldset id="group1">
+<input type="radio" name="tnfoption" value="T"> T <input type="radio" name="tnfoption" value="F"> F </label> </fieldset>
+<label>Weithage
+<input type="text" name="tnfweightage" ></label>
+
+  <br>
+
+<input type="submit" style="float:left" value="Submit">
+    </form>
+                    <div class="w3-container">
+  <h2>True and false set by you</h2>
+  
+
+  <table class="w3-table-all">
+    <thead>
+      <tr class="w3-red"> <th>Question</th> <th>Option(T/F)</th>  
+      <th>Weightage</th>  </tr>
+    </thead>
+    <% allqps.forEach(function(allqps){ %>
+    <tr><td>
+    <%= allqps.tnfquestion %></td><td><%= allqps.tnfoption %></td>
+          <td><%= allqps.tnfweightage %></td>
+    </tr>
+    <% }); %>
+  </table>
+</div>
+
+
+                  
+                
+

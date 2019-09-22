@@ -1,0 +1,31 @@
+<% include partials/header %>
+
+</head>
+<body>
+    <div class="mandiv" style="background-color:green;height: 1000px;border:2px yellow solid ;border-radius: 15px;width: 96%;margin: 10px;">
+            <div class="register1" style="width:30%;background-color:hotpink;height: 100px;border:4px blue solid;border-radius: 25px;margin-left: 35%;margin-top: 16%;height:370px;">
+            <table style="border:1px magenta solid;">
+            	<tr style="border:1px red solid;">
+            		<th>Papername</th>
+            		<th>Question</th>
+            		<th>Questio Type</th>
+            		<th>Marks</th>
+            	</tr>
+            	   <% allqps.forEach(function(allqps){ %>
+                   <p style="color:yellow">
+                   	<tr><td><%= allqps.papername %></td>
+                	<td><%= allqps.question %></td>  
+                	<td><%= allqps.qtype %></td>
+                	<td><%= allqps.marks %></td>
+                </tr>
+                   <% }); %>
+                     </table>
+                    
+           	<form action="/query" method="post" style="margin-top: 80px;margin-left: 50px" >
+				<label>Delete  question paper by name<input type="text" name="dqp" placeholder="delete paper" autofocus="on" required=""></label>
+				<br><br>
+				<button class="lrbutton">Submit</button>
+			</form>
+                </div>    </div>
+    
+<% include partials/footer %>

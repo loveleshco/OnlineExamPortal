@@ -1,0 +1,72 @@
+<% include partials/header2 %>
+ <head>
+   
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="icon" type="image/ico" href="images/logo.jpg" /><title>  Instructions | <%= testid %> </title>
+   </head>
+<script>
+		function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = minutes + ":" + seconds;
+        if (--timer < 0) {
+            document.getElementById("time").innerHTML = "All the best";   
+            }
+    }, 1000);
+}
+
+window.onload = function () {
+    var fiveMinutes =  5,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+    
+    };
+      window.setTimeout('window.location="/studentgivepaper/<%= testid %>";',8000);
+</script>
+
+<body><script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>
+    
+<div class="d1">
+<ul> <li><p style="color:#fff;display:inline-block;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpe6jaMzaKGgXKNP_FjZtY9nmYOZtLHHx_NCLWyD72TmIADmxfpw" alt="Paris" style="width:55px"></p></li>
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+    <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><a href="#home" style="left:20px;padding:40px 20px 40px ">Home</a></li>
+  <li><a href="#news" style="padding:40px 20px 40px ">About Us</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Test</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Faq</a></li>
+  <li><a href="/blog" style="padding:40px 20px 40px ">Blog</a></li>
+  <li><a href="/logout" style="padding:40px 20px 40px ">Logout</a></li>
+
+  <li style="float:right;background-color:yellow;height:100%;width:20%"><a href="#"><span class="glyphicon glyphicon-user"></span>	
+  <%= uname %> : Paper <%= testid %> </a></li>
+</ul>
+	
+</div>
+<br><br><br><br><br><br>
+    
+
+<div class="d2">
+    <h1 style="phome">Please read instructions </h1> <hr>
+    <span class="glyphicon glyphicon-time"></span> <span id="time"> 00:15</span>
+       </div>            
+    
+    
+    
+    
+ </body>
+</html>
+
+

@@ -1,0 +1,65 @@
+ <% include partials/header %>  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style> 
+
+.rcorners1 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 80%;
+    box-shadow: 3px 8px 8px yellow;margin:60px;align:center
+}
+.rcorners2 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 10px; 
+  width: 80%;
+    box-shadow: 5px 10px 18px red;
+    left:60px;
+}
+.rcorners4 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 10px; 
+  width: 170px;
+    box-shadow: 5px 10px 18px red;
+    left:60px;
+}
+.rcorners3 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 15px; 
+  width: 80%;
+    box-shadow: 5px 10px 18px blue;left:60px;
+}
+
+</style><% var du= paperdur[0].paperduration;du=du*60*1000;var du2=du-20000 %>
+<script type="text/javascript">
+window.setInterval(function(){
+    document.getElementById("iddd").submit();
+}, <%= du2 %>);
+</script>
+</head>
+<body>
+<br><br>
+  
+<h1 style="paddingleft:100px"> <% uname%>
+<% testid %>
+  <h2>MCQ </h2>
+   <form action="/studentgivepaper/<%= testid %>/mcqqp" method="post" id="iddd">
+     <% allqps.forEach(function(allqps){ %>
+
+<div class="rcorners1">Question no:<p class="rcorners3">Question :<%= allqps.mcqquestion %></p>
+<p class="rcorners2">Option 1: <%= allqps.mcqoptionone %></p>
+<p class="rcorners2">Option 2: <%= allqps.mcqoptiontwo %></p>
+<p class="rcorners2">Option 3: <%= allqps.mcqoptionthree %></p>
+<p class="rcorners2">Option 4: <%= allqps.mcqoptionfour %></p>
+<p class="rcorners4">Weightage : <%= allqps.mcqweightage %></p>
+<p class="rcorners2">Answer : <input type="text" name="mcqanswer[]" placeholder="Enter 1/2/3/4 only" pattern="[1|2|3|4]{1}" required title="Please enter 1/2/3/4 only">
+</p></div>
+    
+
+    <% }); %>
+  <input type="submit" style="float:left" value="Submit"></form>
+</body>

@@ -1,0 +1,117 @@
+<% include partials/header2 %>
+<head><link rel="icon" type="image/ico" href="images/logo.jpg" /><title>Home Page</title></title></head>
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('timm').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+<body onload="startTime()">
+<div class="d1">
+<ul> <li><p style="color:#fff;display:inline-block;"><img src="/images/logo.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+    <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><a href="#home" style="left:20px;padding:40px 20px 40px ">Home</a></li>
+  <li><a href="#news" style="padding:40px 20px 40px ">About Us</a></li>
+  <li><a href="/getstudentresults" style="padding:40px 20px 40px ">Results</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Faq</a></li>
+  <li><a href="/blog" style="padding:40px 20px 40px ">Blog</a></li>
+  <li><a href="/logout" style="padding:40px 20px 40px ">Logout</a></li>
+
+    <li style="float:right;background-color:yellow;height:100%;width:10%"><a href="#"> <span id="timm"></span></a></li>
+    <li style="float:right;background-color:yellow;height:100%;width:10%"><a href="#"><%= uname %></a></li>
+</ul>
+	
+</div>
+<br><br><br><br><br><br>
+		 
+		
+
+	<div class="rcorners1">
+  <form action="/teacherhomepage" method="post">
+    <div class="row">
+      <div class="col-25">
+        <label for="pname">Paper Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text"  name="testname" placeholder="Paper Name.." required> 
+             </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="pname">Paper duration</label>
+      </div>
+      <div class="col-50">
+        <input type="number" min="2" value="2"  name="paperduration" required>
+           </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="pname">Test id</label>
+      </div>
+      <div class="col-75">
+        <input type="text"  name="testid" value="<%= testidin %>" placeholder="testid" readonly>
+           </div>
+    </div>
+
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+ 
+</div>
+
+	<div class="rcorners1">
+  <div class="container"><div class="row">
+      
+    <input type="text" id="myInput" onkeyup="myFunction()" style="width:92%;" placeholder="Enter papername........ " title="Type in a name">
+</div></div>
+<table id="myTable" style="width:80%;margin: 0px auto">
+
+<% allqps.forEach(function(allqps){ %>
+                   <p style="color:yellow">
+                   	<tr><td><a href="/teachersetpaper/<%= allqps.testid %>"><%= allqps.testname %></td>
+                               	<td><%= allqps.testid %></td>
+                                </tr>
+                   <% }); %>
+  
+ 
+</table></div></div>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+
+<!-- Footer -->
+

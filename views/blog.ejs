@@ -1,0 +1,57 @@
+<% include partials/header2 %>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/ico" href="images/logo.jpg" /><title>   Blog</title>
+</head>
+<body style="background-color:rgba(204, 83, 244,0.3);">
+
+<div class="d1">
+<ul> <li><p style="color:#fff;display:inline-block;"><img src="images/logo.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+    <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><a href="#home" style="left:20px;padding:40px 20px 40px ">Home</a></li>
+  <li><a href="#news" style="padding:40px 20px 40px ">About Us</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Test</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Faq</a></li>
+  <li><a href="https://myfirstnode-amanchauhan.c9users.io/blog" style="padding:40px 20px 40px ">Blog</a></li>
+  <li><a href="https://myfirstnode-amanchauhan.c9users.io/logout" style="padding:40px 20px 40px ">Logout</a></li>
+
+  <li style="float:right;background-color:yellow;height:100%;width:20%"><a href="#">welcome <%= uname %></a></li>
+</ul>
+	
+</div>
+
+<br><br><br><br><br>
+<div class="rcorners3">
+<form action="/blog" method="post" >
+	<div class="row" >
+		 <div class="col-25"> <label for="country">Paper</label> </div>
+		 <div class="col-75">	<select name="paperidblog" size="1"><% pname.forEach(function(pname){ %>
+			 <option value="<%= pname.testid %>"><%= pname.testname %> - <%= pname.testid %></option><% }); %>
+      </select>		 </div>			</div>					<br> 
+     <div class="row">
+    <div class="col-25">   <label for="fname">Comment</label>  </div>
+    <div class="col-75"> <input type="text" id="fname" name="commentblog" placeholder="Say something" required>
+    </div>
+  </div> <div class="row">
+    <input type="submit" value="Submit Doubt">
+  </div>
+				
+					
+</div>
+<br><br>
+
+
+<div class="rcorners3">
+    <table class="w3-table-all">
+    <thead>
+      <tr class="w3-red"> <th>User</th> <th>Paper id</th>      <th>Doubt</th>  </tr>
+    </thead>
+    <% allqps.forEach(function(allqps){ %>
+    <tr><td>    <%= allqps.usernameblog %></td><td><%= allqps.paperidblog  %></td>
+          <td><%= allqps.commentblog  %></td> 
+    </tr>
+    <% }); %>
+  </table></div>

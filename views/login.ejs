@@ -1,0 +1,112 @@
+<% include partials/header %>
+</head>
+<body>
+
+
+	<div class="super_container">
+
+	<header class="header d-flex flex-row">
+		<div class="header_content d-flex flex-row align-items-center">
+			
+			<!-- Logo -->
+			<div class="logo_container">
+				<div class="logo">
+					<img src="images/logo.jpg" alt="">
+					<span>OEP</span>
+				</div>
+			</div>
+
+			<!-- Main Navigation -->
+			<nav class="main_nav_container">
+				<div class="main_nav">
+					<ul class="main_nav_list">
+						<li class="main_nav_item"><a href="#">home</a></li>
+						<li class="main_nav_item"><a href="about.html">about us</a></li>
+						<li class="main_nav_item"><a href="#">tests</a></li>
+						<li class="main_nav_item"><a href="#">faq</a></li>
+						<li class="main_nav_item"><a href="/blog">blog</a></li>
+						<li class="main_nav_item"><a href="https://myfirstnode-amanchauhan.c9users.io/">login</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="header_side d-flex flex-row justify-content-center align-items-center">
+			<!--<img src="" alt="9820835208">-->
+			<span></span>
+		</div>
+
+		<!-- Hamburger -->
+		<div class="hamburger_container">
+			<i class="fas fa-bars trans_200"></i>
+		</div>
+
+	</header>
+	
+	<!-- Menu -->
+	<div class="menu_container menu_mm">
+
+		<!-- Menu Close Button -->
+		<div class="menu_close_container">
+			<div class="menu_close"></div>
+		</div>
+
+		<!-- Menu Items -->
+		<div class="menu_inner menu_mm">
+			<div class="menu menu_mm">
+			
+				<div class="menu_copyright menu_mm">All rights reserved</div>
+			</div>
+
+		</div>
+
+	</div>
+
+<br><br><br><br><br><br>
+
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
+					<span class="login100-form-title-1">
+						Sign In
+					</span>
+				</div>
+
+				<form action="/login" method="post" class="login100-form validate-form">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Username</span>
+						<input class="input100" type="text" name="username" placeholder="Enter username">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="password" placeholder="Enter password">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="flex-sb-m w-full p-b-30">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+												</div>
+						<div>
+							<a href="/register" class="txt1" style="float:left">
+								New user register
+							</a>
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<!-- Footer -->
+<% include partials/footer %>

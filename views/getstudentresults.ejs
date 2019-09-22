@@ -1,0 +1,63 @@
+<% include partials/header2 %>
+<head><link rel="icon" type="image/ico" href="images/logo.jpg" /><title>Student Results</title></head>
+<body>
+
+<div class="d1">
+<ul> <li><p style="color:#fff;display:inline-block;"><img src="/images/logo.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+    <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><a href="#home" style="left:20px;padding:40px 20px 40px ">Home</a></li>
+  <li><a href="#news" style="padding:40px 20px 40px ">About Us</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Test</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Faq</a></li>
+  <li><a href="/blog" style="padding:40px 20px 40px ">Blog</a></li>
+  <li><a href="/logout" style="padding:40px 20px 40px ">Logout</a></li>
+
+  <li style="float:right;background-color:yellow;height:100%;width:20%"><a href="#">welcome <%= uname %></a></li>
+</ul>
+	
+</div>
+<br><br><br><br><br>
+<div class="rcorners1">
+  <h1>Paper name   <span style="align:right">         Paper id</h1>
+    <input type="text" id="myInput" onkeyup="myFunction()" style="width:80%;margin: 0px auto" placeholder="Papername        jhj  " title="Type in a name">
+
+<table id="myTable" style="width:80%;margin: 0px auto">
+
+<% allqps.forEach(function(allqps){ %>
+                   <p style="color:yellow">
+                   	<tr><td><%= allqps.testname %></td>
+                      <td><%= allqps.testid %></td>
+                      <td>	<a href="/getstudentresultsanssheet/<%= allqps.testid %>">Answer Sheet</td>
+                      <td><a href="/getstudentresultsgraph/<%= allqps.testid %>">Graph</td>
+                      <td><a href="/getstudentclassresults/<%= allqps.testid %>">Graph</td>
+                                </tr>
+                   <% }); %>
+ </table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+
+<!-- Footer -->
+

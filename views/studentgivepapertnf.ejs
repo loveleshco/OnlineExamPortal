@@ -1,0 +1,43 @@
+<% include partials/header %>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+</head>
+<% var du= paperdur[0].paperduration;du=du*60*1000; var du1=du-10000;var du2=du-20000 %>
+<script type="text/javascript">
+setTimeout(myf,<%= du2 %>);
+function myf() {
+  alert("You have " + 10 +" seconds left");
+}
+ 
+window.setInterval(function(){
+    document.getElementById("idd").submit();
+}, <%= du2 %>);
+</script>
+
+<body>
+<br><br>
+
+<div class="w3-container">
+  <h2>True and false </h2>
+  
+<form action="/studentgivepaper/<%= testid %>/tnfqp" method="post" id="idd"><br>
+  <table class="w3-table-all">
+    <thead>
+      <tr class="w3-red">  
+      <th>Question</th> <th>Weightage</th>   <th>Your Answer</th>  </tr>
+    </thead>
+    <% allqps.forEach(function(allqps){ %>
+    <tr><td>
+    <%= allqps.tnfquestion %></td>
+         </td><td><%= allqps.tnfweightage %></td>
+          <td><input type="text" name="tnfanswer[]" placeholder="Enter T/t/F/f only" pattern="[T|F]{1}" required title="Please enter T/F "></td>
+       
+
+    </tr>
+    <% }); %>
+  </table>
+  <input type="submit" style="float:left" value="Submit"></form>
+  
+</div>

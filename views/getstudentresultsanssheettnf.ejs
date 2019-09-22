@@ -1,0 +1,31 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<h1>Welcome <%= uname%></h1>
+<h3>Your paper id is <%= testid %></h3>
+<h3>Student id is <%= studentid %></h3>
+
+<div class="w3-container">
+  <h2>True and false Result</h2>
+  
+<br>
+  <table class="w3-table-all">
+    <thead>
+      <tr class="w3-red">  
+      <% var xyz= tnfx2.tnfanswer %> <% var  lenn=xyz.length %>
+      <th>Question</th> <th>Weightage</th>   <th>Correct Answer</th>  <th>Your Answer</th></tr>
+    </thead>
+    <% for(i=0;i<lenn;i++){ %> 
+    <tr><td>
+    <%= tnfx1[i].tnfquestion %></td>
+         <td><%= tnfx1[i].tnfweightage %></td>
+          <td><%= tnfx1[i].tnfoption %></td>
+       <td><%= xyz[i] %></td>
+
+    </tr>
+    <% } %>
+  </table>
+ <h1> <%= studentid %> scored <%= tnfx3.tnfstudentmarks%></h1>
+  
+</div>

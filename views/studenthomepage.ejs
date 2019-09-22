@@ -1,0 +1,89 @@
+<% include partials/header2 %>
+<head><link rel="icon" type="image/ico" href="images/logo.jpg" /><title>   Question Papers</title></head>
+<body>
+
+<div class="d1">
+<ul> <li><p style="color:#fff;display:inline-block;"><img src="/images/logo.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+    <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><a href="#home" style="left:20px;padding:40px 20px 40px ">Home</a></li>
+  <li><a href="#news" style="padding:40px 20px 40px ">About Us</a></li>
+  <!-- <li><a href="#contact" style="padding:40px 20px 40px ">Test</a></li> -->
+  <li><a href="#contact" style="padding:40px 20px 40px ">Faq</a></li>
+  <li><a href="/blog" style="padding:40px 20px 40px ">Blog</a></li>
+  <li><a href="/logout" style="padding:40px 20px 40px ">Logout</a></li>
+
+  <li style="float:right;background-color:yellow;height:100%;width:20%"><a href="#">welcome <%= uname %></a></li>
+</ul>
+	
+</div>
+<br><br><br><br><br><br>
+
+<div class="d2">
+    <p style="padding:5px 10px 5px;display:inline-block">Paper name </p> <p class="phome">Paper id </p>
+    <p class="phome">Paper Set by </p> <p class="phome">Paper Duration </p>
+    <br>
+    <input type="text" id="myInput" onkeyup="myFunction()" style="margin: 0px auto" placeholder="Papername    " title="Type in a name">
+
+<table id="myTable" style="width:68%;margin: 1px 51px">
+
+
+   <% var lenn1=0;%> 
+   <% allqps.forEach(function(allqps){ %>
+   <% lenn1+=1 %>
+   <% }); %> 
+   <% var lenn2=0;%> 
+   <% attemptpaper.forEach(function(attemptpaper){ %>
+   <% lenn2+=1 %>
+   <% }); %> 
+   
+    <% if(lenn2 !==0){ %>
+   <% for(i=0;i<(lenn1);i++){ %>
+  <% for(j=0;j<(lenn2);j++){ %> 
+   <% if(allqps[i].testid == attemptpaper[j].testid){ %>
+  
+             <% continue ; } else { %>
+           <p style="color:yellow">
+                    <tr><td><a href="/studentgivepaperinst/<%= allqps[i].testid %>"><%= allqps[i].testname %></td>
+                                <td><%= allqps[i].testid %></td> <td><%= allqps[i].teachername %></td>  <td><%= allqps[i].paperduration %></td>
+                                </tr>
+    <% } %>                          
+    <% } %>
+    <% } %> 
+    <% } else { %>    
+    
+    <% allqps.forEach(function(allqps){ %>
+                   <p style="color:yellow">
+                    <tr><td><a href="/studentgivepaperinst/<%= allqps.testid %>"><%= allqps.testname %></td>
+                                <td><%= allqps.testid %></td> 
+                                </tr>
+                   <% }); %>
+ <% } %> 
+</table>
+       </div>              
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+</script>
+</body>
+</html>
+

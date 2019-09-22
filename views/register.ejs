@@ -1,0 +1,128 @@
+<% include partials/header %>
+
+</head>
+
+<body>
+
+
+	<div class="super_container">
+
+	<header class="header d-flex flex-row">
+		<div class="header_content d-flex flex-row align-items-center">
+			
+			<!-- Logo -->
+			<div class="logo_container">
+				<div class="logo">
+					<img src="images/logo.jpg" alt="">
+					<span>OEP</span>
+				</div>
+			</div>
+
+			<!-- Main Navigation -->
+			<nav class="main_nav_container">
+				<div class="main_nav">
+					<ul class="main_nav_list">
+						<li class="main_nav_item"><a href="#">home</a></li>
+						<li class="main_nav_item"><a href="about.html">about us</a></li>
+						<li class="main_nav_item"><a href="#">tests</a></li>
+						<li class="main_nav_item"><a href="#">faq</a></li>
+						<li class="main_nav_item"><a href="/blog">blog</a></li>
+						<li class="main_nav_item"><a href="https://myfirstnode-amanchauhan.c9users.io/">login</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="header_side d-flex flex-row justify-content-center align-items-center">
+			<!--<img src="images/phone-call.svg" alt="">-->
+			<!--<span>+43 4566 7788 2457</span>-->
+		</div>
+
+	</header>
+
+	</div>
+
+<br><br><br><br><br><br>
+
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
+					<span class="login100-form-title-1">
+						Registration
+					</span>
+				</div>
+
+				<form action="/register" method="post" class="login100-form validate-form">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+						<span class="label-input100">Username</span>
+						<input class="input100" type="text" name="username" placeholder="Enter username" autofocus="">
+						<span class="focus-input100"></span>
+					</div>
+
+          <div class="wrap-input100 validate-input m-b-26" data-validate="Password is required">
+            <span class="label-input100">Password</span>
+            <input class="input100" type="password" name="password" placeholder="Enter Password" autofocus>
+            <span class="focus-input100"></span>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-26" data-validate="Date of Birth is required">
+            <span class="label-input100">Date of Birth</span>
+            <input class="input100" type="date" name="registerdob" placeholder="Enter Date of Birth" autofocus="">
+            <span class="focus-input100"></span>
+          </div>
+
+          <div class="wrap-input100 validate-input m-b-26" data-validate="Pid is required">
+            <span class="label-input100">Pid</span>
+            <input class="input100" type="number" name="registerpid" placeholder="Enter Pid" autofocus="">
+            <span class="focus-input100"></span>
+          </div>
+
+					<div class="wrap-input100 validate-input m-b-18" data-validate ="Emailid is required">
+						<span class="label-input100">Email id</span>
+            <input class="input100" type="email" name=registeremail" placeholder="Enter Email" autofocus="">
+			
+						<span class="focus-input100"></span>
+					</div>
+<script>alert("if u r student prefix s before userid");</script>
+          <!--<div class="wrap-input100 validate-input m-b-18" data-validate = "Class is required">-->
+          <!--  <span class="label-input100">Class</span>-->
+      
+          <!--  <select>-->
+          <!--        <option value="volvo">First Year</option>-->
+          <!--        <option value="saab">Second Year</option>-->
+          <!--        <option value="opel">Third Year</option>-->
+          <!--        <option value="audi">Fourth Year</option>-->
+          <!--  </select>-->
+          <!--  <span class="focus-input100"></span>-->
+          <!--</div>-->
+
+					<div class="flex-sb-m w-full p-b-30">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								Remember me
+							</label>
+						</div>
+
+						<div>
+							<a href="/login" class="txt1">
+								login
+							</a>
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							register
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<!-- Footer -->
+
+<% include partials/footer %>

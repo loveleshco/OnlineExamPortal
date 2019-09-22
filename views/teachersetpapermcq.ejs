@@ -1,0 +1,72 @@
+<% include partials/header2 %><link rel="icon" type="image/ico" href="images/logo.jpg" />
+<head><link rel="icon" type="image/ico" href="images/logo.jpg" /><title>Set MCQ</title>
+ 
+</head>
+<body>
+
+<div class="d1">
+<ul> <li><p style="color:#fff;display:inline-block;"><img src="/images/logo.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+    <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li> 
+   <li><p style="color:#fff;display:inline-block;"><img src="https://static.wixstatic.com/media/b77fe464cfc445da9003a5383a3e1acf.jpg" alt="Paris" style="width:55px"></p></li>
+  <li><a href="#home" style="left:20px;padding:40px 20px 40px ">Home</a></li>
+  <li><a href="#news" style="padding:40px 20px 40px ">About Us</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Test</a></li>
+  <li><a href="#contact" style="padding:40px 20px 40px ">Faq</a></li>
+  <li><a href="/blog" style="padding:40px 20px 40px ">Blog</a></li>
+  <li><a href="/logout" style="padding:40px 20px 40px ">Logout</a></li>
+ <li style="float:right;background-color:yellow;height:100%;width:10%"><a href="#">Paper id <%= testid %></a></li>
+  <li style="float:right;background-color:yellow;height:100%;width:10%"><a href="#">welcome <%= uname %></a></li>
+
+</ul>
+	
+</div>
+<br><br><br><br><br><br>
+
+<form action="/teachersetpaper/<%= testid %>/mcqqp" method="post"><br>
+
+<label>Question  
+<input type="text" name="mcqquestion" ></label><br>
+<label>Option 1
+<input type="text" name="mcqoptionone" ></label>
+<label>Option 2
+<input type="text" name="mcqoptiontwo" ></label>
+<label>Option 3
+<input type="text" name="mcqoptionthree" ></label>
+<label>Option 4
+<input type="text" name="mcqoptionfour" ></label>
+<label>correct option
+<input type="text" name="mcqcorrectoption" placeholder="Enter 1/2/3/4 only" pattern="[1|2|3|4]{1}" required title="Please enter correct option no " ></label>
+<label>Weithage
+<input type="text" name="mcqweightage" ></label>
+
+  <br>
+
+<input type="submit" style="float:left" value="Submit">
+    </form>
+                    <div class="w3-container">
+  <h2>True and false set by you</h2>
+  
+
+  <table class="w3-table-all">
+    <thead>
+      <tr class="w3-red"> <th>Question</th> <th>Option 1</th> <th>Option 2</th><th>Option 3</th><th>Option 4</th> <th>Correct option</th> 
+      <th>Weightage</th>  </tr>
+    </thead>
+    <% allqps.forEach(function(allqps){ %>
+    <tr><td>
+    <%= allqps.mcqquestion %></td><td><%= allqps.mcqoptionone %></td>
+          <td><%= allqps.mcqoptiontwo %></td>
+          <td><%= allqps.mcqoptionthree %></td>
+          <td><%= allqps.mcqoptionfour %></td>
+          <td><%= allqps.mcqcorrectoption %></td><td><%= allqps.mcqweightage %></td>
+    </tr>
+    <% }); %>
+  </table>
+</div>
+
+
+                  
+                
+

@@ -1,0 +1,22 @@
+<% include partials/header2 %>
+<% var du= paperdur[0].paperduration;du=du*60*1000;var du2=du-20000 %>
+<script type="text/javascript">
+window.setInterval(function(){
+    document.getElementById("iddd").submit();
+}, <%= du2 %>);
+</script>
+
+<body>
+
+  <h2>Descriptive </h2>
+   <form action="/studentgivepaper/<%= testid %>/descqp" method="post" id="iddd">
+     <% allqps.forEach(function(allqps){ %>
+
+<div class="rcorners1"><p class="rcorners3">Question :<%= allqps.descquestion %></p>
+<p class="rcorners4">Weightage : <%= allqps.descweightage %></p>
+<p class="rcorner5">Answer : <textarea rows = "4" cols = "30" name="descstudentanswer[]" required title="Please enter"></textarea>
+</p></div>
+        <% }); %>
+  <input type="submit" style="float:left" value="Submit"></form>	
+
+</body>
