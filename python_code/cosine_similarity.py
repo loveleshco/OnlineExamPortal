@@ -32,9 +32,9 @@ def givKeywordsValue(text1, text2,out_of):
     kval = 0
     if cosine > 80:
         kval = (out_of*1)
-    elif cosine > 600:
+    elif cosine > 60:
         kval = (out_of*0.8)
-    elif cosine > 400:
+    elif cosine > 40:
         kval = (out_of*0.5)
     elif cosine > 20:
         kval = (out_of*0.2)
