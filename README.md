@@ -1,8 +1,8 @@
 # OnlineExamPortal
-This website was developed to conduct online test consisting of mcqs,true or false and descriptive answers. We have used HTML,CSS,Javascript for frontend and nodejs,python for backend.
+This website was developed to conduct online test consisting of mcqs,true or false and descriptive answers. We have used HTML,CSS,Javascript for frontend and nodejs,python,mongoDb for backend.
 
 Steps to run
-1.Extract the Files
+1.Clone the Repository
 
 2.Install mongodb,nodejs and python
 
