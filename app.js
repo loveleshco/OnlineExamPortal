@@ -10,7 +10,9 @@ var  express                = require("express"),
      let {PythonShell} = require('python-shell')
     
     
-mongoose.connect("mongodb://localhost/beprojdb", { useNewUrlParser: true });    
+//mongoose.connect("mongodb://localhost/beprojdb", { useNewUrlParser: true });    
+
+mongoose.connect("mongodb+srv://loveleshco:Vk5fFa98gOxQdSlA@nodetuts.l9jrg.mongodb.net/beprojdb?retryWrites=true&w=majority",{ useNewUrlParser: true })
 
 //1. Generate random no for unique question paper
 var genrandnoschema=new mongoose.Schema({
@@ -169,7 +171,10 @@ app.get("/register", function(req, res){
 });
 
 app.post("/register", function(req, res){
-    var newuser=new User({username: req.body.username}),registerdob=req.body.registerdob,registeremail=req.body.registeremail,registerpid=req.body.registerpid;
+    var newuser=new User({username: req.body.username}),
+    registerdob=req.body.registerdob,
+    registeremail=req.body.registeremail,
+    registerpid=req.body.registerpid;
         User.register(newuser, req.body.password, function(err, user){
         if(err){
             console.log(err);
