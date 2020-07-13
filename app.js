@@ -12,7 +12,8 @@ var  express                = require("express"),
     
 //mongoose.connect("mongodb://localhost/beprojdb", { useNewUrlParser: true });    
 
-mongoose.connect("mongodb+srv://loveleshco:Vk5fFa98gOxQdSlA@nodetuts.l9jrg.mongodb.net/beprojdb?retryWrites=true&w=majority",{ useNewUrlParser: true })
+const URI = require("./dbURI");
+mongoose.connect(URI,{ useNewUrlParser: true })
 
 //1. Generate random no for unique question paper
 var genrandnoschema=new mongoose.Schema({
